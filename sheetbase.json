@@ -1,0 +1,18 @@
+{
+	"cloudId": "simpleblog-preview",
+	"driveFolder": "1PA201m3pi8W78JtzW_kvjL3Bm8M0gYn2",
+	"configMaps": {
+		"backend": ["apiKey", "databaseId"],
+		"frontend": ["apiKey", "backendUrl"]
+	},
+	"configs": {
+		"backend": {
+			"apiKey": "cruf8i32tRUwrukuBesoRa6ruthuYlj3",
+			"databaseId": "1VBi12tO5xjvTZQBr3K38EtQlFf1UawaNC4pl9Z0OExo"
+		},
+		"frontend": {
+			"apiKey": "cruf8i32tRUwrukuBesoRa6ruthuYlj3",
+			"backendUrl": "https://script.google.com/macros/s/AKfycbywpBGrTSboD9IofbJzKeraXrDQcKud3cyAi84FrR3hMyeFjvDQ/exec"
+		}
+	}
+}

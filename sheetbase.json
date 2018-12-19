@@ -1,9 +1,8 @@
 {
-	"cloudId": "simpleblog-preview",
 	"driveFolder": "1PA201m3pi8W78JtzW_kvjL3Bm8M0gYn2",
 	"configMaps": {
-		"backend": ["apiKey", "databaseId"],
-		"frontend": ["apiKey", "backendUrl"]
+		"backend": [ "apiKey", "databaseId" ],
+		"frontend": [ "apiKey", "backendUrl" ]
 	},
 	"configs": {
 		"backend": {

@@ -8,36 +8,41 @@ The Simpleblog theme, based on Angular + Ionic.
 
 <!-- /block:header -->
 
-## Getting start
+## Get started
 
-### Using @sheetbase/cli
+### Using the CLI
 
- - Run: $ `sheetbase start <project_name> simpleblog-angular`
+- Start a project: $ `sheetbase start <project_name> simpleblog-angular`
 
 ### Manually
 
- - Clone this repo.
- - Install *backend/* dependecies.
- - Install *frontend/* dependecies.
- - Install *hooks/* dependecies.
+- Clone this repo.
+- Install backend dependecies: $ `npm run backend:install`.
+- Install frontend dependecies: $ `npm run frontend:install`.
 
-Done! Now, start building an awesome app. Need help, please see the docs: https://sheetbase.net/docs.
+Done! Now, start building an awesome app. Need help, see the docs: https://sheetbase.net/docs.
 
-## Develop
+## Workflow
 
 ### Backend
 
-Backend code lives in **backend/**. See how to develop Sheetbase backend (TODO).
+Backend code lives in **backend/**.
 
-Build and update backend code by: $ `npm run backend:build && npm run backend:deploy`
+- Test: $ `npm run backend:test`
+- Build: $ `npm run backend:build`
+- Push code to server: $ `npm run backend:deploy`
 
 ### Frontend
 
-Frontend code lives in **frontend/**. See how to develop Sheetbase frontend (TODO).
+Frontend code lives in **frontend/**.
+
+- Test: $ `npm run frontend:test`
+- E2E test: $ `npm run frontend:e2e`
+- Build: $ `npm run frontend:build`
 
 ## Documentation
 
-See the docs (TODO): https://sheetbase.net/docs
+Read more: https://sheetbase.net/docs
 
 ## License
 

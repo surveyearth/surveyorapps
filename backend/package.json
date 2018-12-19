@@ -4,9 +4,8 @@
       "deploy": "sheetbase-app-scripts deploy",
       "lint": "tslint --project tslint.json && echo 'All files pass linting.'",
       "transpile-test": "tsc -p tests/tsconfig.test.json",
-      "coverage-test": "nyc --cache false report --reporter=text-lcov > ./.nyc_output/lcov.info",
       "run-test": "nyc --cache false mocha --timeout 100000 -- build/tests/*.js",
-      "test": "npm run transpile-test && npm run run-test && npm run coverage-test"
+      "test": "npm run transpile-test && npm run run-test"
    },
    "dependencies": {
       "@sheetbase/auth-api-key-server": "0.0.10",

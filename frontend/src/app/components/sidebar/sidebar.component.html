@@ -1,8 +1,17 @@
 <section class="sidebar">
 
   <ion-list class="categories">
-    <ion-list-header>Categories</ion-list-header>
-    <ion-item *ngFor="let item of categories" [routerLink]="['/category', item?.slug]">{{ item?.title }}</ion-item>
+    <ion-list-header class="sidebar-header">Categories</ion-list-header>
+    <ion-item *ngFor="let item of categories" [routerLink]="['/category', item?.slug]">
+      <ion-label>{{ item?.title }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="tags">
+    <ion-list-header class="sidebar-header">Tags</ion-list-header>
+    <div style="padding-top: 15px;">
+      <ion-button fill="clear" size="small" color="dark" *ngFor="let item of tags" [routerLink]="['/tag', item?.slug]">{{ item.title }}</ion-button>
+    </div>
   </ion-list>
 
 </section>

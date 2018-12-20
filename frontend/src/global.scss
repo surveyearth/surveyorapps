@@ -9,3 +9,10 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+.sidebar-header {
+    text-transform: uppercase;
+    background: #333;
+    color: #FFF;
+    margin-top: 30px;
+}

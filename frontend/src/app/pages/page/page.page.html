@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+
+      <ion-col size="12" size-md="8" offset-md="2">
+
+        <div style="padding: 30px; text-align: center;" *ngIf="!page">
+          <ion-spinner></ion-spinner>
+        </div>
+
+        <section *ngIf="!!page">
+          <h2>{{ page?.title }}</h2>
+          <article [innerHtml]="page?.content | safe"></article>
+        </section>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <app-footer></app-footer>
+
+</ion-content>

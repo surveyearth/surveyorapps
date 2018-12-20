@@ -1,12 +1,22 @@
-# Sheetbase Theme: Simpleblog Angular
+<section style="text-align: center;">
 
-The Simpleblog theme, based on Angular + Ionic.
+![Sheetbase Theme: Simpleblog Angular](https://sheetbase-themes.github.io/simpleblog-angular/assets/images/featured.jpg "Sheetbase Theme: Simpleblog Angular")
+
+# Sheetbase Theme: Simpleblog Angular
 
 <!-- block:header -->
 
 [![License][license_badge]][license_url] [![Support me on Patreon][badge_patreon]][patreon_url] [![PayPal][badge_paypal_donate]][paypal_donate_url] [![Ask me anything][badge_ask_me]][ask_me_url]
 
 <!-- /block:header -->
+
+The Simpleblog theme, based on Angular + Ionic.
+
+</section>
+
+## Preview
+
+[https://sheetbase-themes.github.io/simpleblog-angular/](https://sheetbase-themes.github.io/simpleblog-angular/)
 
 ## Get started
 

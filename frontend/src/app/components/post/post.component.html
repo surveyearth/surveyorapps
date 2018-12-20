@@ -1,0 +1,20 @@
+<article class="post" *ngIf="!!post">
+
+  <div class="head">
+    <h1><a href="#" [routerLink]="['/post', post.slug]">{{ post.title }}</a></h1>
+    <p>Posted on {{ post.date }} by <a href="#" *ngFor="let author of ((post.author || { unknown: 'Unknown' }) | o2a)" [routerLink]="['/author', author.$key]">{{ author.value }}</a></p>
+    <a href="#" [routerLink]="['/post', post.slug]"><img *ngIf="!!post.image" [src]="post.image || 'https://dummyimage.com/1200x700/cccccc/ffffff'" [alt]="post.title"></a>
+  </div>
+  <p class="excerpt" [innerHtml]="post.description"></p>
+  <div class="content" [innerHtml]="post.content | safe"></div>
+
+  <div class="foot">
+    <div class="categories">
+      <a href="#" *ngFor="let category of post.categories | o2a" [routerLink]="['/category', category.$key]">{{ category.value }}</a>
+    </div>
+    <div class="tags">
+      <ion-button fill="outline" size="small" color="dark" *ngFor="let tag of post.tags | o2a"  [routerLink]="['/tag', tag.$key]">{{ tag.value }}</ion-button>
+    </div>
+  </div>
+
+</article>

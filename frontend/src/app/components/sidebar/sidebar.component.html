@@ -1,0 +1,8 @@
+<section class="sidebar">
+
+  <ion-list class="categories">
+    <ion-list-header>Categories</ion-list-header>
+    <ion-item *ngFor="let item of categories" [routerLink]="['/category', item?.slug]">{{ item?.title }}</ion-item>
+  </ion-list>
+
+</section>

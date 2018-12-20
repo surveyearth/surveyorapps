@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h1><a href="#" [routerLink]="['/']">Blog X</a></h1>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" [routerLink]="['/page', 'parent-page']" routerLinkActive="active" >Parent Page</ion-button>
+      <ion-button fill="clear" [routerLink]="['/page', 'sub-page']" routerLinkActive="active" >Sub-page</ion-button>
+      <ion-button fill="clear" [routerLink]="['/page', 'about']" routerLinkActive="active" >About</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

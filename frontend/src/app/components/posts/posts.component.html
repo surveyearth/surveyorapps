@@ -1,0 +1,6 @@
+<ul class="posts">
+  <li *ngIf="!posts" class="spinner"><ion-spinner></ion-spinner></li>
+  <li class="post" *ngFor="let item of posts | filter:s:['id', 'description', 'date', 'author', 'categories', 'tags']">
+    <app-post [post]="item"></app-post>
+  </li>
+</ul>

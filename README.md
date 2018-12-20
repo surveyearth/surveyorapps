@@ -1,8 +1,8 @@
-<section style="text-align: center;">
+<div align="center" style="text-align: center;">
 
-![Sheetbase Theme: Simpleblog Angular](https://sheetbase-themes.github.io/simpleblog-angular/assets/images/featured.jpg "Sheetbase Theme: Simpleblog Angular")
+<img src="https://sheetbase-themes.github.io/simpleblog-angular/assets/images/featured.jpg" alt="Sheetbase Theme: Simpleblog Angular" />
 
-# Sheetbase Theme: Simpleblog Angular
+<h1>Sheetbase Theme: Simpleblog Angular</h1>
 
 <!-- block:header -->
 
@@ -10,9 +10,9 @@
 
 <!-- /block:header -->
 
-The Simpleblog theme, based on Angular + Ionic.
+<p>The Simpleblog theme, based on Angular + Ionic.</p>
 
-</section>
+</div>
 
 ## Preview
 

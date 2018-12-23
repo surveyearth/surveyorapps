@@ -1,0 +1,8 @@
+[
+    { "name": "#", "type": "number", "size": 50 },
+    { "name": "name" },
+    { "name": "slug" },
+    { "name": "email", "size": 200 },
+    { "name": "avatar", "size": 500 },
+    { "name": "bio", "size": 500 }
+]

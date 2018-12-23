@@ -1,0 +1,5 @@
+[
+    { "name": "#", "type": "number", "size": 50 },
+    { "name": "title" },
+    { "name": "slug" }
+]

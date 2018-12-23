@@ -1,0 +1,7 @@
+[
+    { "name": "#", "type": "number", "size": 50 },
+    { "name": "title" },
+    { "name": "slug" },
+    { "name": "cover", "size": 300 },
+    { "name": "content", "size": 700 }
+]

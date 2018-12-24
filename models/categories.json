@@ -1,7 +1,7 @@
 [
-    { "name": "#", "type": "number", "size": 50 },
+    { "name": "#", "type": "number", "width": 50 },
     { "name": "title" },
     { "name": "slug" },
-    { "name": "description", "size": 500 },
+    { "name": "description", "width": 500 },
     { "name": "count", "type": "number" }
 ]

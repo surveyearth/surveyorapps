@@ -1,13 +1,13 @@
 [
-    { "name": "#", "type": "number", "size": 50 },
+    { "name": "#", "type": "number", "width": 50 },
     { "name": "title" },
     { "name": "slug" },
     { "name": "date" },
-    { "name": "author", "type": "object", "size": 200 },
-    { "name": "description", "size": 300 },
-    { "name": "thumbnail", "size": 300 },
-    { "name": "image", "size": 300 },
-    { "name": "content", "size": 700 },
-    { "name": "categories", "type": "object", "size": 200 },
-    { "name": "tags", "type": "object", "size": 200 }
+    { "name": "author", "type": "object", "width": 200 },
+    { "name": "description", "width": 300 },
+    { "name": "thumbnail", "width": 300 },
+    { "name": "image", "width": 300 },
+    { "name": "content", "width": 700 },
+    { "name": "categories", "type": "object", "width": 200 },
+    { "name": "tags", "type": "object", "width": 200 }
 ]

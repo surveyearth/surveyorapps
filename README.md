@@ -16,7 +16,7 @@
 
 ## Preview
 
-[https://sheetbase-themes.github.io/simpleblog-angular/](https://sheetbase-themes.github.io/simpleblog-angular/)
+<https://sheetbase-themes.github.io/simpleblog-angular/>
 
 ## Get started
 
@@ -27,32 +27,33 @@
 ### Manually
 
 - Clone this repo.
-- Install backend dependecies: $ `npm run backend:install`.
-- Install frontend dependecies: $ `npm run frontend:install`.
+- Install backend dependecies: $ `sheetbase backend install`.
+- Install frontend dependecies: $ `sheetbase frontend install`.
 
-Done! Now, start building an awesome app. Need help, see the docs: https://sheetbase.net/docs.
+Done! Now, start building an awesome app. Need help, see the docs: <https://sheetbase.net/docs>.
 
 ## Workflow
 
 ### Backend
 
-Backend code lives in **backend/**.
+Backend code lives in **backend/** folder.
 
-- Test: $ `npm run backend:test`
-- Build: $ `npm run backend:build`
-- Push code to server: $ `npm run backend:deploy`
+- Test: $ `sheetbase backend test`
+- Build: $ `sheetbase backend build`
+- Push code to server: $ `sheetbase backend push`
+- Deploy: $ `sheetbase backend deploy`
 
 ### Frontend
 
-Frontend code lives in **frontend/**.
+Frontend code lives in **frontend/** folder.
 
-- Test: $ `npm run frontend:test`
-- E2E test: $ `npm run frontend:e2e`
-- Build: $ `npm run frontend:build`
+- Test: $ `sheetbase frontend test`
+- E2E: $ `sheetbase frontend e2e`
+- Build: $ `sheetbase frontend build`
 
 ## Documentation
 
-Read more: https://sheetbase.net/docs
+Read more: <https://sheetbase.net/docs>
 
 ## License
 

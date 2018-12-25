@@ -9,6 +9,7 @@
         "**/.nyc_output": true,
         "**/coverage": true,
 		
-		"**/frontend/resources": true
+		"**/frontend/resources": true,
+		"**/frontend/www": true
     }
 }

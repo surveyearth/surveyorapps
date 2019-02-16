@@ -15,38 +15,38 @@ export class DataService {
   }
 
   authors() {
-    return from(this.app.database().all('authors'));
+    return from(this.app.database().all('authors', 60));
   }
   author(idOrCondition: number | {[key: string]: string}) {
-    return from(this.app.database().item('authors', idOrCondition));
+    return from(this.app.database().item('authors', idOrCondition, 60));
   }
 
   categories() {
-    return from(this.app.database().all('categories'));
+    return from(this.app.database().all('categories', 60));
   }
   category(idOrCondition: number | {[key: string]: string}) {
-    return from(this.app.database().item('categories', idOrCondition));
+    return from(this.app.database().item('categories', idOrCondition, 60));
   }
 
   tags() {
-    return from(this.app.database().all('tags'));
+    return from(this.app.database().all('tags', 60));
   }
   tag(idOrCondition: number | {[key: string]: string}) {
-    return from(this.app.database().item('tags', idOrCondition));
+    return from(this.app.database().item('tags', idOrCondition, 60));
   }
 
   pages() {
-    return from(this.app.database().all('pages'));
+    return from(this.app.database().all('pages', 60));
   }
   page(idOrCondition: number | {[key: string]: string}) {
-    return from(this.app.database().item('pages', idOrCondition));
+    return from(this.app.database().item('pages', idOrCondition, 60));
   }
 
   posts() {
-    return from(this.app.database().all('posts'));
+    return from(this.app.database().all('posts', 60));
   }
   post(idOrCondition: number | {[key: string]: string}) {
-    return from(this.app.database().item('posts', idOrCondition));
+    return from(this.app.database().item('posts', idOrCondition, 60));
   }
 
 }

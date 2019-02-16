@@ -50,6 +50,9 @@ Frontend code lives in **frontend/** folder.
 - Test: $ `sheetbase frontend test`
 - E2E: $ `sheetbase frontend e2e`
 - Build: $ `sheetbase frontend build`
+- Prerender content: $ `sheetbase frontend prerender`
+- SEO optimization: $ `sheetbase frontend seo`
+- Deploy: $ `sheetbase frontend deploy`
 
 ## Documentation
 

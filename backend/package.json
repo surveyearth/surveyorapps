@@ -1,4 +1,6 @@
 {
+   "name": "backend",
+   "version": "0.0.0",
    "scripts": {
       "build": "sheetbase-app-scripts build",
       "lint": "tslint --project tslint.json && echo 'All files pass linting.'",

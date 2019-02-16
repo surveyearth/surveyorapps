@@ -20,5 +20,37 @@
 	"setupHooks": {
 		"apiKey": ["Generate the API key", "randomStr"],
 		"databaseId": ["Create the database", "createDatabase"]
+	},
+	"deployment": {
+		"provider": "github",
+		"url": "https://sheetbase-themes.github.io/simpleblog-angular",
+		"stagingDir": "../preview",
+		"destination": {
+			"gitUrl": "https://github.com/sheetbase-themes/simpleblog-angular.git",
+			"changeBase": true
+		}
+	},
+	"prerender": {
+		"categories": {
+			"location": "category",
+			"keyField": "slug",
+			"rewriteFields": { "content": "description" }
+		},
+		"tags": {
+			"location": "tag",
+			"keyField": "slug",
+			"rewriteFields": { "content": "title" }
+		},
+		"authors": {
+			"location": "author",
+			"keyField": "slug",
+			"rewriteFields": { "title": "name", "content": "bio" }
+		},
+		"pages": {
+			"location": "page",
+			"keyField": "slug",
+			"rewriteFields": { "image": "cover" }
+		},
+		"posts": { "location": "post", "keyField": "slug" }
 	}
 }

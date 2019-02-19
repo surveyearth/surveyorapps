@@ -51,6 +51,12 @@
 			"keyField": "slug",
 			"rewriteFields": { "image": "cover" }
 		},
-		"posts": { "location": "post", "keyField": "slug" }
+		"posts": {
+			"location": "post",
+			"keyField": "slug",
+			"type": "article",
+			"rewriteFields": { "published": "date", "section": "categories", "tag": "tags" },
+			"defaultValues": { "publisher": "Sheetbase" }
+		}
 	}
 }

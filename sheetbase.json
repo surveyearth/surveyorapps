@@ -30,6 +30,7 @@
 			"changeBase": true
 		}
 	},
+	"directPrerender": "./frontend/src/prerenders.json",
 	"prerender": {
 		"categories": {
 			"location": "category",

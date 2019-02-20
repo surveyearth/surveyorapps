@@ -33,30 +33,28 @@
 	"prerender": {
 		"categories": {
 			"location": "category",
-			"keyField": "slug",
-			"rewriteFields": { "content": "description" }
+			"keyField": "slug"
 		},
 		"tags": {
 			"location": "tag",
-			"keyField": "slug",
-			"rewriteFields": { "content": "title" }
+			"keyField": "slug"
 		},
 		"authors": {
 			"location": "author",
 			"keyField": "slug",
-			"rewriteFields": { "title": "name", "content": "bio" }
+			"rewriteFields": { "title": "name", "description": "bio", "image": "avatar" },
+			"priority": "0.9"
 		},
 		"pages": {
 			"location": "page",
 			"keyField": "slug",
-			"rewriteFields": { "image": "cover" }
+			"rewriteFields": { "image": "cover" },
+			"priority": "0.8"
 		},
 		"posts": {
 			"location": "post",
 			"keyField": "slug",
-			"type": "article",
-			"rewriteFields": { "published": "date", "section": "categories", "tag": "tags" },
-			"defaultValues": { "publisher": "Sheetbase" }
+			"priority": "1.0"
 		}
 	}
 }

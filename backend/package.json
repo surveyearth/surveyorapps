@@ -7,21 +7,21 @@
       "test": "tsc -p tests/tsconfig.test.json && nyc --cache false mocha --timeout 100000 -- build/tests/*.js"
    },
    "dependencies": {
-      "@sheetbase/auth-api-key-server": "0.0.10",
+      "@sheetbase/api-key-server": "0.0.11",
       "@sheetbase/core-server": "0.0.19",
-      "@sheetbase/sheets-server": "0.0.3"
+      "@sheetbase/sheets-server": "0.0.6"
    },
    "devDependencies": {
       "@sheetbase/app-scripts": "^0.0.30",
       "@types/chai": "^4.1.7",
-      "@types/google-apps-script": "0.0.31",
-      "@types/mocha": "^5.2.5",
-      "@types/node": "^10.12.6",
+      "@types/google-apps-script": "^0.0.37",
+      "@types/mocha": "^5.2.6",
+      "@types/node": "^11.9.4",
       "chai": "^4.2.0",
-      "mocha": "^5.2.0",
-      "nyc": "^13.1.0",
-      "rollup-plugin-node-resolve": "^3.4.0",
-      "tslint": "^5.11.0",
-      "typescript": "^3.1.6"
+      "mocha": "^6.0.0",
+      "nyc": "^13.3.0",
+      "rollup-plugin-node-resolve": "^4.0.0",
+      "tslint": "^5.12.1",
+      "typescript": "^3.3.3"
    }
 }

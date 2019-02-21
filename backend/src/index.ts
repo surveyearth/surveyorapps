@@ -26,7 +26,11 @@ const Sheets = sheets({
         posts: 'slug',
     },
     securityRules: {
-        'read': true,
+        categories: { '.read': true },
+        tags: { '.read': true },
+        authors: { '.read': true },
+        pages: { '.read': true },
+        posts: { '.read': true },
     },
 });
 
@@ -45,5 +49,5 @@ Sheets
 
 homeRoutes();
 
-// export for use elsewhere
+// export for using elsewhere
 export { Sheetbase, Sheets, ApiKeyMiddleware };

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { MetaService } from '../../services/meta/meta.service';
 import { DataService } from '../../services/data/data.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class CategoryPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private metaService: MetaService,
     private dataService: DataService,
   ) {
     this.categorySlug = this.route.snapshot.paramMap.get('categorySlug');
@@ -27,6 +29,8 @@ export class CategoryPage implements OnInit {
       this.dataService.category({ slug: this.categorySlug })
       .subscribe(category => {
         this.category = category;
+        // set meta
+        this.metaService.setMeta(category);
       });
     }
 

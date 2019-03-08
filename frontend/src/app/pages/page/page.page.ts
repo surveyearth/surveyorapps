@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { MetaService } from '../../services/meta/meta.service';
 import { DataService } from '../../services/data/data.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class PagePage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private metaService: MetaService,
     private dataService: DataService,
   ) {
     this.pageSlug = this.route.snapshot.paramMap.get('pageSlug');
@@ -26,6 +28,8 @@ export class PagePage implements OnInit {
       this.dataService.page({ slug: this.pageSlug })
       .subscribe(page => {
         this.page = page;
+        // set meta
+        this.metaService.setMeta(page);
       });
     }
   }

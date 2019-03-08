@@ -26,36 +26,7 @@
 		"url": "https://sheetbase-themes.github.io/simpleblog-angular",
 		"stagingDir": "../preview",
 		"destination": {
-			"gitUrl": "https://github.com/sheetbase-themes/simpleblog-angular.git",
-			"changeBase": true
-		}
-	},
-	"directPrerender": "./frontend/src/prerenders.json",
-	"prerender": {
-		"categories": {
-			"location": "category",
-			"keyField": "slug"
-		},
-		"tags": {
-			"location": "tag",
-			"keyField": "slug"
-		},
-		"authors": {
-			"location": "author",
-			"keyField": "slug",
-			"rewriteFields": { "title": "name", "description": "bio", "image": "avatar" },
-			"priority": "0.9"
-		},
-		"pages": {
-			"location": "page",
-			"keyField": "slug",
-			"rewriteFields": { "image": "cover" },
-			"priority": "0.8"
-		},
-		"posts": {
-			"location": "post",
-			"keyField": "slug",
-			"priority": "1.0"
+			"gitUrl": "https://github.com/sheetbase-themes/simpleblog-angular.git"
 		}
 	}
 }

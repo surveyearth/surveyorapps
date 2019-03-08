@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { MetaService } from '../../services/meta/meta.service';
 import { DataService } from '../../services/data/data.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class AuthorPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private metaService: MetaService,
     private dataService: DataService,
   ) {
     this.authorSlug = this.route.snapshot.paramMap.get('authorSlug');
@@ -27,6 +29,8 @@ export class AuthorPage implements OnInit {
       this.dataService.author({ slug: this.authorSlug })
       .subscribe(author => {
         this.author = author;
+        // set meta
+        this.metaService.setMeta(author);
       });
     }
 

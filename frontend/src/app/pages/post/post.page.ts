@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { MetaService } from '../../services/meta/meta.service';
 import { DataService } from '../../services/data/data.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class PostPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private metaService: MetaService,
     private dataService: DataService,
   ) {
     this.postSlug = this.route.snapshot.paramMap.get('postSlug');
@@ -27,6 +29,8 @@ export class PostPage implements OnInit {
       this.dataService.post({ slug: this.postSlug })
       .subscribe(post => {
         this.post = post;
+        // set meta
+        this.metaService.setMeta(post);
         this.loadRelatedPosts();
       });
     }

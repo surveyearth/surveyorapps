@@ -1,0 +1,32 @@
+[
+    {
+        "table": "categories",
+        "location": "category",
+        "changefreq": "monthly",
+        "priority": "0.3"
+    },
+    {
+        "table": "tags",
+        "location": "tag",
+        "changefreq": "monthly",
+        "priority": "0.3"
+    },
+    {
+        "table": "authors",
+        "location": "author",
+        "changefreq": "monthly",
+        "priority": "0.7"
+    },
+    {
+        "table": "pages",
+        "location": "page",
+        "changefreq": "weekly",
+        "priority": "0.9"
+    },
+    {
+        "table": "posts",
+        "location": "post",
+        "changefreq": "daily",
+        "priority": "1.0"
+    }
+]

@@ -1,32 +1,35 @@
-[
-    {
-        "table": "categories",
-        "location": "category",
-        "changefreq": "monthly",
-        "priority": "0.3"
-    },
-    {
-        "table": "tags",
-        "location": "tag",
-        "changefreq": "monthly",
-        "priority": "0.3"
-    },
-    {
-        "table": "authors",
-        "location": "author",
-        "changefreq": "monthly",
-        "priority": "0.7"
-    },
-    {
-        "table": "pages",
-        "location": "page",
-        "changefreq": "weekly",
-        "priority": "0.9"
-    },
-    {
-        "table": "posts",
-        "location": "post",
-        "changefreq": "daily",
-        "priority": "1.0"
-    }
-]
+{
+    "items": [
+        {
+            "from": "categories",
+            "location": "category",
+            "changefreq": "yearly",
+            "priority": "0.3"
+        },
+        {
+            "from": "tags",
+            "location": "tag",
+            "changefreq": "yearly",
+            "priority": "0.3"
+        },
+        {
+            "from": "authors",
+            "location": "author",
+            "changefreq": "yearly",
+            "priority": "0.7"
+        },
+        {
+            "from": "pages",
+            "location": "page",
+            "changefreq": "monthly",
+            "priority": "0.9"
+        },
+        {
+            "from": "posts",
+            "location": "post",
+            "changefreq": "daily",
+            "priority": "1.0"
+        }
+    ],
+    "loading": true
+}

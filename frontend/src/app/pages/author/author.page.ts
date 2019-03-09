@@ -30,7 +30,11 @@ export class AuthorPage implements OnInit {
       .subscribe(author => {
         this.author = author;
         // set meta
-        this.metaService.setMeta(author);
+        this.metaService.setMeta(author, {
+          title: 'name',
+          description: 'bio',
+          image: 'avatar',
+        });
       });
     }
 

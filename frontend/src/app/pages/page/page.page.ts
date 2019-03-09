@@ -29,7 +29,7 @@ export class PagePage implements OnInit {
       .subscribe(page => {
         this.page = page;
         // set meta
-        this.metaService.setMeta(page);
+        this.metaService.setMeta(page, { image: 'cover' });
       });
     }
   }

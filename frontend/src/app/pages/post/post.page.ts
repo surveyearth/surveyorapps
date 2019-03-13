@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { MetaService } from '../../services/meta/meta.service';
+import { NavService } from '../../services/nav/nav.service';
 import { DataService } from '../../services/data/data.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class PostPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private metaService: MetaService,
+    private nav: NavService,
     private dataService: DataService,
   ) {
     this.postSlug = this.route.snapshot.paramMap.get('postSlug');
@@ -26,35 +26,27 @@ export class PostPage implements OnInit {
   ngOnInit() {
     // load the post
     if (!!this.postSlug) {
-      this.dataService.post({ slug: this.postSlug })
+      this.dataService.post(this.postSlug)
       .subscribe(post => {
         this.post = post;
         // set meta
-        this.metaService.setMeta(post);
+        this.nav.setMeta(post, { author: '_' });
         this.loadRelatedPosts();
       });
     }
   }
 
   loadRelatedPosts() {
-    this.dataService.posts().subscribe(posts => {
+    this.dataService.posts(post => {
       const [ category ] = Object.keys(this.post.categories || {});
       const [ tag ] = Object.keys(this.post.tags || {});
-
-      // get posts
-      const myPosts = [];
-      for (let i = 0; i < posts.length; i++) {
-        const post = posts[i];
-        if (
-          (!!category && !!post.categories && !!post.categories[category]) ||
-          (!!tag && !!post.tags && !!post.tags[tag])
-        ) {
-          myPosts.push(post);
-        }
-      }
-
-      // set posts
-      this.posts = myPosts;
+      return (
+        (!!category && !!post.categories && !!post.categories[category]) ||
+        (!!tag && !!post.tags && !!post.tags[tag])
+      );
+    })
+    .subscribe(posts => {
+      this.posts = posts;
     });
   }
 

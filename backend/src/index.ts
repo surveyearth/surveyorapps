@@ -1,9 +1,9 @@
 import { sheetbase } from '@sheetbase/core-server';
-import { sheets } from '@sheetbase/sheets-server';
 import { middleware as apiKeyMiddleware } from '@sheetbase/api-key-server';
+import { sheets } from '@sheetbase/sheets-server';
 
 import { SHEETBASE_CONFIG } from './sheetbase.config';
-import homeRoutes from './routes/index';
+import appRoutes from './routes/index';
 
 // configs
 const { apiKey, databaseId } = SHEETBASE_CONFIG;
@@ -16,6 +16,8 @@ const Sheetbase = sheetbase({
     allowMethodsWhenDoGet: true, // for dev, should remove when in production
 });
 
+const ApiKeyMiddleware = apiKeyMiddleware({ key: apiKey });
+
 const Sheets = sheets({
     databaseId,
     keyFields: {
@@ -25,7 +27,7 @@ const Sheets = sheets({
         pages: 'slug',
         posts: 'slug',
     },
-    securityRules: {
+    security: {
         categories: { '.read': true },
         tags: { '.read': true },
         authors: { '.read': true },
@@ -33,8 +35,6 @@ const Sheets = sheets({
         posts: { '.read': true },
     },
 });
-
-const ApiKeyMiddleware = apiKeyMiddleware({ key: apiKey });
 
 /**
  * routes
@@ -47,7 +47,7 @@ Sheets
     disabledRoutes: [],
 });
 
-homeRoutes();
+appRoutes();
 
 // export for using elsewhere
-export { Sheetbase, Sheets, ApiKeyMiddleware };
+export { Sheetbase, ApiKeyMiddleware, Sheets };

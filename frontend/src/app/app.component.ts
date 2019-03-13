@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { MetaService } from './services/meta/meta.service';
+import { initializeApp } from '@sheetbase/client/app';
+import '@sheetbase/client/database';
+
+import { AppService } from './services/app/app.service';
+import { NavService } from './services/nav/nav.service';
+import { DataService } from './services/data/data.service';
+
+import { SHEETBASE_CONFIG } from '../sheetbase.config';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +23,10 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private metaService: MetaService,
+    private router: Router,
+    private appService: AppService,
+    private navService: NavService,
+    private dataService: DataService,
   ) {
     this.initializeApp();
   }
@@ -26,8 +37,11 @@ export class AppComponent {
       this.splashScreen.hide();
     });
 
-    // init meta service
-    this.metaService.init({
+    // init app
+    this.appService.init(initializeApp({ ... SHEETBASE_CONFIG, cacheTime: 60 }));
+
+    // setup nav service
+    this.navService.init(this.router, {
       title: 'Sheetbase Simpleblog',
       description: 'The Simpleblog theme, based on Angular + Ionic.',
       image: 'https://sheetbase-themes.github.io/simpleblog-angular/assets/images/featured.jpg',
@@ -41,6 +55,9 @@ export class AppComponent {
       ogAdmins: '1552168898245647',
       ogAppId: '276545556215548',
     });
+
+    // setup data service
+    this.dataService.init(this.appService);
   }
 
 }

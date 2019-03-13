@@ -1,52 +1,64 @@
 import { Injectable } from '@angular/core';
-import { initializeApp, App } from '@sheetbase/client';
-import { from } from 'rxjs';
+import { from, Observable } from 'rxjs';
+import { Filter } from '@sheetbase/client';
 
-import { SHEETBASE_CONFIG } from '../../../sheetbase.config';
+import { Author, Category, Tag, Page, Post } from '../../types';
+import { AppService } from '../app/app.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private app: App;
 
-  constructor() {
-    this.app = initializeApp(SHEETBASE_CONFIG);
-  }
+  private App: AppService;
 
-  authors() {
-    return from(this.app.database().all('authors', 60));
-  }
-  author(idOrCondition: number | {[key: string]: string}) {
-    return from(this.app.database().item('authors', idOrCondition, 60));
+  constructor() { }
+
+  init(App: AppService) {
+    this.App = App;
   }
 
-  categories() {
-    return from(this.app.database().all('categories', 60));
-  }
-  category(idOrCondition: number | {[key: string]: string}) {
-    return from(this.app.database().item('categories', idOrCondition, 60));
+  private all<Item>(sheet: string, filter?: Filter): Observable<Item[]> {
+    return from(!!filter ? this.App.database().query(sheet, filter) : this.App.database().all(sheet));
   }
 
-  tags() {
-    return from(this.app.database().all('tags', 60));
-  }
-  tag(idOrCondition: number | {[key: string]: string}) {
-    return from(this.app.database().item('tags', idOrCondition, 60));
+  private item<Item>(sheet: string, finder: string | Filter): Observable<Item> {
+    return from(this.App.database().item(sheet, finder));
   }
 
-  pages() {
-    return from(this.app.database().all('pages', 60));
+  authors(filter?: Filter) {
+    return this.all<Author>('authors', filter);
   }
-  page(idOrCondition: number | {[key: string]: string}) {
-    return from(this.app.database().item('pages', idOrCondition, 60));
+  author(finder: string | Filter) {
+    return this.item<Author>('authors', finder);
   }
 
-  posts() {
-    return from(this.app.database().all('posts', 60));
+  categories(filter?: Filter) {
+    return this.all<Category>('categories', filter);
   }
-  post(idOrCondition: number | {[key: string]: string}) {
-    return from(this.app.database().item('posts', idOrCondition, 60));
+  category(finder: string | Filter) {
+    return this.item<Category>('categories', finder);
+  }
+
+  tags(filter?: Filter) {
+    return this.all<Tag>('tags', filter);
+  }
+  tag(finder: string | Filter) {
+    return this.item<Tag>('tags', finder);
+  }
+
+  pages(filter?: Filter) {
+    return this.all<Page>('pages', filter);
+  }
+  page(finder: string | Filter) {
+    return this.item<Page>('pages', finder);
+  }
+
+  posts(filter?: Filter) {
+    return this.all<Post>('posts', filter);
+  }
+  post(finder: string | Filter) {
+    return this.item<Post>('posts', finder);
   }
 
 }

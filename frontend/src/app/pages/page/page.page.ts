@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { MetaService } from '../../services/meta/meta.service';
+import { NavService } from '../../services/nav/nav.service';
 import { DataService } from '../../services/data/data.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class PagePage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private metaService: MetaService,
+    private nav: NavService,
     private dataService: DataService,
   ) {
     this.pageSlug = this.route.snapshot.paramMap.get('pageSlug');
@@ -25,11 +25,11 @@ export class PagePage implements OnInit {
   ngOnInit() {
     // load the page
     if (!!this.pageSlug) {
-      this.dataService.page({ slug: this.pageSlug })
+      this.dataService.page(this.pageSlug)
       .subscribe(page => {
         this.page = page;
         // set meta
-        this.metaService.setMeta(page, { image: 'cover' });
+        this.nav.setMeta(page, { image: 'cover' });
       });
     }
   }

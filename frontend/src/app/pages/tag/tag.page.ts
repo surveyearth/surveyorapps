@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { MetaService } from '../../services/meta/meta.service';
+import { NavService } from '../../services/nav/nav.service';
 import { DataService } from '../../services/data/data.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class TagPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private metaService: MetaService,
+    private nav: NavService,
     private dataService: DataService,
   ) {
     this.tagSlug = this.route.snapshot.paramMap.get('tagSlug');
@@ -26,24 +26,19 @@ export class TagPage implements OnInit {
   ngOnInit() {
     // load the tag
     if (!!this.tagSlug) {
-      this.dataService.tag({ slug: this.tagSlug })
+      this.dataService.tag(this.tagSlug)
       .subscribe(tag => {
         this.tag = tag;
         // set meta
-        this.metaService.setMeta(tag);
+        this.nav.setMeta(tag);
       });
     }
 
     // load posts
-    this.dataService.posts().subscribe(posts => {
-      const myPosts = [];
-      for (let i = 0; i < posts.length; i++) {
-        const post = posts[i];
-        if (!!post.tags && !!post.tags[this.tagSlug]) {
-          myPosts.push(post);
-        }
-      }
-      this.posts = myPosts;
+    this.dataService
+    .posts(post => (!!post.tags && !!post.tags[this.tagSlug]))
+    .subscribe(posts => {
+      this.posts = posts;
     });
   }
 

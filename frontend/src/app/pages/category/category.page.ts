@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { MetaService } from '../../services/meta/meta.service';
+import { NavService } from '../../services/nav/nav.service';
 import { DataService } from '../../services/data/data.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class CategoryPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private metaService: MetaService,
+    private nav: NavService,
     private dataService: DataService,
   ) {
     this.categorySlug = this.route.snapshot.paramMap.get('categorySlug');
@@ -26,24 +26,19 @@ export class CategoryPage implements OnInit {
   ngOnInit() {
     // load the category
     if (!!this.categorySlug) {
-      this.dataService.category({ slug: this.categorySlug })
+      this.dataService.category(this.categorySlug)
       .subscribe(category => {
         this.category = category;
         // set meta
-        this.metaService.setMeta(category);
+        this.nav.setMeta(category);
       });
     }
 
     // load posts
-    this.dataService.posts().subscribe(posts => {
-      const myPosts = [];
-      for (let i = 0; i < posts.length; i++) {
-        const post = posts[i];
-        if (!!post.categories && !!post.categories[this.categorySlug]) {
-          myPosts.push(post);
-        }
-      }
-      this.posts = myPosts;
+    this.dataService
+    .posts(post => (!!post.categories && !!post.categories[this.categorySlug]))
+    .subscribe(posts => {
+      this.posts = posts;
     });
   }
 

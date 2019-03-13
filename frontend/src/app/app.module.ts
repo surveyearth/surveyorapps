@@ -9,8 +9,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { MetaService } from './services/meta/meta.service';
+import { AppService } from './services/app/app.service';
 import { DataService } from './services/data/data.service';
+import { NavService } from './services/nav/nav.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,8 +21,10 @@ import { DataService } from './services/data/data.service';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    MetaService,
+
+    AppService,
     DataService,
+    NavService,
   ],
   bootstrap: [AppComponent]
 })

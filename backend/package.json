@@ -14,7 +14,7 @@
    "dependencies": {
       "@sheetbase/api-key-server": "0.0.11",
       "@sheetbase/core-server": "0.0.19",
-      "@sheetbase/sheets-server": "0.0.9"
+      "@sheetbase/sheets-server": "0.0.10"
    },
    "devDependencies": {
       "@sheetbase/app-scripts": "^0.0.30",
